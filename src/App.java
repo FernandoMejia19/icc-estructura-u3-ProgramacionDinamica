@@ -1,5 +1,8 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
+import Ejercicios.contorllers.Laberinto;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -27,8 +30,8 @@ public class App {
         System.out.println("Time taken: " + (endtime - startime)/1_000_000_000.00 + " s");
        System.out.println(String.format("Time taken: %9f segundos ", (endtime - startime)/1_000_000_000.00 )  );
 
-        /// Ejericio 1
-        // runEjercicio();
+        // Ejericio 1
+        runEjercicio();
 
     }
 
@@ -76,12 +79,15 @@ public class App {
 
     public static void runEjercicio() {
 
-        // boolean[][] grid = {
-        // { true, true, true, true },
-        // { false, false, false, true },
-        // { true, true, false, true },
-        // { true, true, false, true }
-        // };
-
+         boolean[][] grid = {
+         { true, true, true, true },
+         { false, false, false, true },
+         { true, true, false, true },
+         { true, true, false, true }
+         };
+         Laberinto laberinto=new Laberinto();
+         System.out.println(Arrays.deepToString(grid));
+         laberinto.getPath(grid);
+         System.out.println(laberinto.getPath(grid));
     }
 }
